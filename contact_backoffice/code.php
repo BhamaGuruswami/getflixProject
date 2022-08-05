@@ -64,16 +64,16 @@ if(isset($_POST['save_message']))
     if($query_run)
     {
         $_SESSION['message'] = "Message Created Successfully";
-                header("Location: message-create.php");
-        // header("Location: ../contact.php");
+                //  header("Location: message-create.php");
+        header("Location: ../contact.php");
         // echo '<script> location.replace("../contact.php"); </script>';
         exit(0);
     }
     else
     {
         $_SESSION['message'] = "Message Not Created";
-        header("Location: message-create.php");
-        // header("Location:../contact.php");
+        // header("Location: message-create.php");
+        header("Location:../contact.php");
         // echo '<script> location.replace("../contact.php"); </script>';
         exit(0);
     }

@@ -1,6 +1,7 @@
 
 <?php
 session_start();
+require "./contact_backoffice/code.php";
 
 ?>
 <!DOCTYPE html>
@@ -41,6 +42,7 @@ session_start();
             <div class=" d-flex align-items-center justify-content-center">
                 <div class="bg-white col-md-6 rounded-2">
                     <div class="p-4 rounded shadow-md ">
+                    <form action="./contact_backoffice/code.php" method="POST">
                         <div>
                             <label for="name" class="form-label">Enter your name</label>
                             <input type="text" name="name" class="form-control" placeholder="Your Name" required>
@@ -58,8 +60,7 @@ session_start();
                             <textarea name="message" cols="20" rows="6" class="form-control"
                                 placeholder="Leave your message here."></textarea>
                         </div>
-                        <button class="btn btn-danger">
-                            Send
+                        <button type="submit" name="save_message" class="btn btn-primary">Submit Form</button>
                         </button>
                     </div>
                 </div>
