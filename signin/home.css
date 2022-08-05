@@ -71,12 +71,12 @@ h2{
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 2rem;
+	margin-left: 3%;
 }
 .footer a:hover{
   text-decoration: underline;
   color: #999;
 }
-
 @media screen and (max-width: 350px){
 	.footer .footer-cols{
 	grid-template-columns: repeat(2, 1fr);
@@ -101,18 +101,8 @@ h2{
 		font-size: 1rem !important;
 	}
 }
-
 .footer li{
 	line-height: 1.9;
-}
-.footer .lang-select{
-	margin-top: 2rem;
-	color: #999;
-	background-color: #0c1a35;
-	background-image: none;
-	border: 1px solid #333;
-	padding: 1rem 1.2rem;
-	/* border-radius: 5px; */
 }
 .container1, .container2{
 	width: 100%;
@@ -166,12 +156,11 @@ h2{
 .text h1{
 	font-size: 3.125rem;
 }
-
-@media screen and (min-width: 700px){
+@media screen and (min-width: 1300px){
 .footer {
 	position: fixed;
 	left: 0;
 	bottom: 0;
 	width: 100%;
-}
+	}
 }

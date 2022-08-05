@@ -35,7 +35,7 @@ try{
     <!-- <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="../home.css"> -->
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="../home.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../signin/home.css?v=<?php echo time(); ?>">
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,26 +50,21 @@ try{
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/ventilateur.png">
     <title><?php echo $videolist->items[0]->snippet->title; ?></title>
 </head>
-<body class="mb-4 mx-2">
+<!-- <body class="mb-4 mx-2"> -->
+  <body>
   <!-- navbar -->
   <div class="topnav p-2">
     <a class="logo"  href="../index.php"><img src="../assets/ventilateur.png" width="30" alt="logo"> <b>BesTube</b></a>
     <a class="logoback" href="../index.php"><i class="fa-solid fa-backward fa-xl"></i></a>
   </div>
+  <!-- video -->
   <h3 class="text-light text-center my-4">
   <?php echo $videolist->items[0]->snippet->title; ?>
   </h3>
     <div class="video" id="player">
         <iframe width="854" height="480" src="https://www.youtube.com/embed/<?php echo $item; ?>?autoplay=1" title="YouTube video" allowfullscreen frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
       </div>
-  <!-- Description -->
-  <!-- <div class="descriptioncard card bg-dark text-light ms-4 me-4">
-    <div class="card-body p-3" id="description">
-      <p>Description</p>
-      <p><?php // echo $videolist->items[0]->snippet->description; ?></p>
-      </div>
-    </div> -->
-
+<!-- description -->
   <div class="accordion accordion-flush mx-5 mb-4" id="accordionFlushExample">
     <div class="accordion-item">
       <h2 class="accordion-header" id="flush-headingOne">
@@ -98,11 +93,11 @@ try{
     //     <button type='submit' name='logoutSubmit' class='buttonlogout my-3 bg-danger'>Log out</button>
     // </form>";
 
-    if(isset($_SESSION['id'])){
-        echo "<br><span class='mx-5'> </span>";
-    } else{
-        echo " ";
-    }
+    // if(isset($_SESSION['id'])){
+    //     echo "<br><span class='mx-5'> </span>";
+    // } else{
+    //     echo " ";
+    // }
 ?>
 <!-- comments section -->
 <?php
@@ -123,7 +118,7 @@ try{
 ?>
 </div>
 
-<footer class="footer p-2">
+<footer class="footer p-2 mt-5">
   <div class="footer-cols ">
     <ul>
       <li><a href="../faq.php">FAQ</a></li>

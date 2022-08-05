@@ -109,6 +109,7 @@
            insertTable($videolistMusic, $category2);
            insertTable($videolistCooking, $category3);
            insertTable($videolistTrailer, $category4);
+           insertTable($videolistVideoGames, $category5);
             ?>
       </table>
     </div>

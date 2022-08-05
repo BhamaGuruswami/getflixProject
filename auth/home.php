@@ -47,20 +47,18 @@ try{
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/ventilateur.png">
     <title>Default Player</title>
 </head>
-<body class="mb-4 mx-2">
+<!-- <body class="mb-4 mx-2"> -->
+    <body>
     <!-- navbar -->
-    
     <div class="topnav p-2">
     <a class="logo" href="../index.php"><img src="../assets/ventilateur.png" width="30" alt="logo"> <b>BesTube</b></a>
     <a href="../signin/sign.php" class="split">Log in</a>
     </div>
-
   <!-- video -->
   <h3 class="text-light text-center mb-2">Deep Sea Nuke</h3>
     <div class="video" id="player">
-        <iframe width="854" height="480" src="https://www.youtube.com/embed/9tbxDgcv74c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe max-width="854" max-height="480" src="https://www.youtube.com/embed/9tbxDgcv74c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-
 <!-- description -->
 <div class="accordion accordion-flush mx-5 mb-4" id="accordionFlushExample">
     <div class="accordion-item">
@@ -71,10 +69,9 @@ try{
       </h2>
     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body bg-dark text-light"><?php echo $videolist->items[0]->snippet->description; ?></div>
-    </div>
+    <!-- </div> -->
     </div>
   </div>
-
 <!-- login logout -->
 <?php
     echo "<form class='mt-4 mx-5 text-light' method='POST' action='".getLogin($pdo)."'>
@@ -107,15 +104,15 @@ try{
         <br><span class='text-light' style='font-weight: 500; margin-left: 52px;'>Messages</span>
     </form>";
     } else{
-        echo "<br>" . "<span class='mx-5'><i>You need an account to comment!</i></span><br><span class='text-light' style='font-weight: 500; margin-left: 52px;'>Messages</span>";
+        echo "<br>" . "<span class='mx-5 text-light'><i>You need an account to comment!</i></span><br><span class='text-light' style='font-weight: 500; margin-left: 52px;'>Messages</span>";
     }
 
     getComments($pdo);
 ?>
 </div>
-
-<footer class="footer p-2">
-  <div class="footer-cols ">
+<!-- footer -->
+<footer class="footer p-2 mt-5">
+  <div class="footer-cols">
     <ul>
         <li><a href="../faq.php">FAQ</a></li>
     </ul>
