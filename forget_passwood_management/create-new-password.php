@@ -2,9 +2,6 @@
 require_once "../config.php";
 
 if(isset($_POST['reset-password-submit'])){
-  // $pwd1 = filter_var($_POST['pwd'], FILTER_SANITIZE_STRING);
-  // $pwd2 = filter_var($_POST['pwd-repeat'], FILTER_SANITIZE_STRING);
-  // $email = filter_var($_POST['new_email'], FILTER_SANITIZE_STRING);
 
   $pwd1 = $_POST['pwd'];
   $pwd2 = $_POST['pwd-repeat'];
@@ -44,7 +41,7 @@ if(isset($_POST['reset-password-submit'])){
     <!-- <link rel="stylesheet" href="sign.css?v=<?php echo time(); ?>"> -->
     <!-- link icon in head -->
     <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="../assets/ventilateur.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/ventilateur.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/ventilateur.png">
 </head>
 <body>
   <!-- navbar -->
@@ -62,7 +59,7 @@ if(isset($_POST['reset-password-submit'])){
             <div class="card" style="border-radius: 15px;">
               <div class="card-body p-5">
 
-                <h2 class="text-uppercase text-center mb-5">Recover your password</h2>
+                <h2 class="text-uppercase text-center mb-5">Reset your password</h2>
                 
                 <?php
                 $selector = $_GET["selector"];
@@ -104,16 +101,16 @@ else{
   <footer class="footer p-2">
             <div class="footer-cols">
                 <ul>
-                    <li><a href="/faq.php">FAQ</a></li>
+                    <li><a href="../faq.php">FAQ</a></li>
                 </ul>
                 <ul>
-                    <li><a href="./contact.php">Contact Us</a></li>
+                    <li><a href="../contact.php">Contact Us</a></li>
                 </ul>
                 <ul>
-                    <li><a href="./auth/home.php">BesTube Originals</a></li>
+                    <li><a href="../auth/home.php">BesTube Originals</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#">Copyright 2022 BesTube <i class="fa-regular fa-copyright"></i></a></li>
+                    <li><a href="#">2022 BesTube <i class="fa-regular fa-copyright"></i></a></li>
                 </ul>
             </div>
         </footer>

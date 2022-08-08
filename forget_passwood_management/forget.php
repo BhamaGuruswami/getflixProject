@@ -40,7 +40,7 @@
 
 
                 <form action="recovery.php" method="POST">
-                <h2 class="text-uppercase text-center mb-5">Recover your password</h2>
+                <h2 class="text-uppercase text-center mb-5">Reset your password</h2>
                 <p>
                   Please enter your email address to reset your password
                 </p>
@@ -58,7 +58,7 @@
 <?php
 if(isset($_GET["reset"])){
   if ($_GET["reset"]=="success"){
-    echo '<p class ="signupsuccess">check your e-mail!</p>';
+    echo '<p class ="signsuccess">Check your e-mail!</p>';
   }
 }
 
