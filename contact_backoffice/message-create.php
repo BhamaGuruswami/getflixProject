@@ -16,27 +16,28 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- link bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6c36406174.js" crossorigin="anonymous"></script>
     <!-- link css -->
-    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../signin/home.css?v=<?php echo time(); ?>">
     <!-- link icon in head -->
     <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="../assets/ventilateur.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/ventilateur.png">
-    <link rel="stylesheet" href="../home.css">
-  <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/ventilateur.png">
 
 </head>
 
 <body>
     <!-- navbar -->
     <div class="topnav container-fluid p-2">
-    <a class="logo"  href="index.php"><img src="../assets/ventilateur.png" width="30" alt="logo"> <b>BesTube</b></a>
+    <a class="logo"  href="../index.php"><img src="../assets/ventilateur.png" width="30" alt="logo"> <b>BesTube</b></a>
+    <a href="index.php" class="btn btn-danger float-end">Backoffice</a>
+
     </div>
 
 <div class="my-5 conatiner">
 <?php include('message.php'); ?>
             <div class="text-center">
                 <h3 class="text-light">How Can We Help You?
-                <a href="index.php" class="btn btn-danger float-end">BACK</a>
+                <!-- <a href="index.php" class="btn btn-danger float-end">BACK</a> -->
                 </h3>
             </div>
             <div class=" d-flex align-items-center justify-content-center">
@@ -80,7 +81,7 @@ session_start();
     <li><a href="./auth/home.php">BesTube Originals</a></li>
     </ul>
     <ul>
-      <li><a href="#">Copyright 2022 BesTube</a></li>
+      <li><a href="#">Copyright 2022 BesTube <i class="fa-regular fa-copyright"></i></a></li>
    </ul>
   </div>
 </footer>
