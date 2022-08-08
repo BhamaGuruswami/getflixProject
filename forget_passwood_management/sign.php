@@ -108,7 +108,7 @@ if(isset($_get["newpwd"])){
                     <li><a href="./auth/home.php">BesTube Originals</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#">Copyright 2022 BesTube <i class="fa-regular fa-copyright"></i></a></li>
+                    <li><a href="#">2022 BesTube <i class="fa-regular fa-copyright"></i></a></li>
                 </ul>
             </div>
         </footer>
