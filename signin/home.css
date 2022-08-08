@@ -15,7 +15,6 @@ h2{
 }  
 .topnav{
   overflow: hidden;
-  /* background-color: #2f5294; */
   font-weight: 400;
   margin-bottom: 15px;
   opacity: 0.9;
@@ -32,26 +31,29 @@ h2{
 }
 .topnav a.split{
   float: right;
-  background-color: #d42d3d;
+  background-color: transparent;
   color: #ffffff;
   padding: 15px;
   border-radius: 2px;
 }
 .topnav a.split:hover{
-	background-color: #c8252d;
-	/* color: #000000; */
+	color: #d42d3d;
+	font-weight: 600;
+	text-decoration: underline;
 	border-radius: 2px;
 }
 .topnav .logo{
-	background-color: #ddd;
-	color: #000000;
+	background-color: #d42d3d;
+	color: #fff;
     border-radius: 3px;
 }
 .topnav .logo:hover{
 	opacity: 1;
 }
 .topnav .logohome:hover{
-	color: #ffffff;
+	color: #d42d3d;
+	text-decoration: underline;
+	font-weight: 600;
 	opacity: 1;
 }
 .footer{
@@ -75,7 +77,10 @@ h2{
 }
 .footer a:hover{
   text-decoration: underline;
-  color: #999;
+  color: #d42d3d;
+}
+ul{
+	list-style-type:none;
 }
 @media screen and (max-width: 350px){
 	.footer .footer-cols{

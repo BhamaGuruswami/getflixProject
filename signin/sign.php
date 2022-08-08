@@ -1,29 +1,6 @@
 <?php
 require_once "../config.php";
-
-if(!empty($_SESSION['id'])){
-    header("Location: ../index.php");
-}
-
-if(isset($_POST['submit'])){
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
-    $row = mysqli_fetch_assoc($result);
-    if(mysqli_num_rows($result) > 0){
-        if($password == $row['password']){
-            $_SESSION['login'] = true;
-            $_SESSION['id'] = $row['id'];
-            header("Location: ../index.php");
-        } else{
-            echo "<h6 class='text-light m-1'>Wrong password.</h6><hr>";
-        }
-    } else{
-        echo "<h6 class='text-light m-1'>User not registered.</h6><hr>";
-    }
-}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,6 +76,30 @@ if(isset($_POST['submit'])){
                   <div class="text-center">
                     <p class="signup">New to BesTube? <a class="btnpwd" href="home.php">Sign up here</a>.</p>
                   </div>
+
+                  <?php
+                  if(!empty($_SESSION['id'])){
+                    header("Location: ../index.php");
+                }
+                
+                if(isset($_POST['submit'])){
+                    $email = $_POST['email'];
+                    $password = $_POST['password'];
+                    $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
+                    $row = mysqli_fetch_assoc($result);
+                    if(mysqli_num_rows($result) > 0){
+                        if($password == $row['password']){
+                            $_SESSION['login'] = true;
+                            $_SESSION['id'] = $row['id'];
+                            header("Location: ../index.php");
+                        } else{
+                            echo "<hr><h6 class='m-1 text-center text-danger'>Wrong password, try again.</h6>";
+                        }
+                    } else{
+                        echo "<hr><h6 class='m-1 text-center text-danger'>User not registered.</h6>";
+                    }
+                }
+                  ?>
                 </form>
               </div>
             </div>

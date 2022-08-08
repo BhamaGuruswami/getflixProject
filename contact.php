@@ -45,11 +45,11 @@ require "./contact_backoffice/code.php";
                     <form action="./contact_backoffice/code.php" method="POST">
                         <div>
                             <label for="name" class="form-label">Enter your name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                            <input type="text" name="name" class="form-control" placeholder="Name" required>
                         </div>
                         <div class="mt-3">
                             <label for="email" class="form-label">Enter your email</label>
-                            <input type="text" name="email" class="form-control" placeholder="Your Email" required>
+                            <input type="text" name="email" class="form-control" placeholder="Email address" required>
                         </div class="mt-3">
                         <div class="mt-3">
                             <label for="subject" class="form-label">Subject</label>
@@ -58,7 +58,7 @@ require "./contact_backoffice/code.php";
                         <div class="mt-3 mb-3">
                             <label for="message" class="form-label">Message</label>
                             <textarea name="message" cols="20" rows="6" class="form-control"
-                                placeholder="Leave your message here."></textarea>
+                                placeholder="Leave your message here"></textarea>
                         </div>
                         <button type="submit" name="save_message" class="btn btn-primary">Submit Form</button>
                         </button>

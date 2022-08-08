@@ -14,8 +14,9 @@ body{
     box-shadow: 5px 5px 8px #111827;
 }
 .topnav .logo{
-	background-color: #ddd;
-	color: #000000;
+	/* background-color: #ddd; */
+    background-color: #d42d3d;
+	color: #fff;
     border-radius: 3px;
 }
 .topnav{
@@ -24,6 +25,21 @@ body{
 }
 .topnav:hover{
     opacity: 1;
+}
+.topnav a.split{
+    float: right;
+    background-color: #d42d3d;
+    /* background-color: transparent; */
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 2px;
+}
+  .topnav a.split:hover{
+    background-color: #c8252d;
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 2px;
 }
 .signup{
     font-weight: 500;
@@ -47,5 +63,5 @@ body{
 }
 .footer a:hover{
     text-decoration: underline;
-    color: #999;
+    color: #d42d3d;
 }

@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
       $nameErr = "Only letters and white space allowed";
     }
-
   }
   
   if (empty($_POST["email"])) {
@@ -34,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $emailErr = "Invalid email format";
     }
-
   }
     
   if (empty($_POST["password"])) {
@@ -50,10 +48,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
-//     $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
-//     $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
-//     $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
-//     $confirm = filter_var($_POST['rptpassword'], FILTER_SANITIZE_STRING);
+    $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
+    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
+    $confirm = filter_var($_POST['rptpassword'], FILTER_SANITIZE_STRING);
 
     $duplicate = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
     if(mysqli_num_rows($duplicate) > 0){
@@ -114,22 +112,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <div class="form-outline mb-4">
                   <label for="name" style="font-weight: 600;">Enter your name </label>
-                  <span class="error">* <?php echo $nameErr;?></span>
+                  <span class="error text-danger">* <?php echo $nameErr;?></span>
                   <input type="text" name="name" id="name" placeholder="Name" class="form-control form-control-md">
                 </div>
                 <div class="form-outline mb-4">
                   <label for="email" style="font-weight: 600;">Enter your email address</label>
-                  <span class="error">* <?php echo $emailErr;?></span>
+                  <span class="error text-danger">* <?php echo $emailErr;?></span>
                   <input type="text" name="email" id="email"  placeholder="Email address" class="form-control form-control-md">
                 </div>
                 <div class="form-outline mb-4">
                   <label for="password" style="font-weight: 600;">Choose a password </label>
-                  <span class="error">* <?php echo $passwordErr;?></span>
+                  <span class="error text-danger">* <?php echo $passwordErr;?></span>
                   <input type="password" name="password" id="password" placeholder="Password" class="form-control form-control-md">
                 </div>
                 <div class="form-outline mb-4">
                   <label for="rptpassword" style="font-weight: 600;">Confirm password </label>
-                  <span class="error">* <?php echo $confirmErr;?></span>
+                  <span class="error text-danger">* <?php echo $confirmErr;?></span>
                   <input type="password" name="rptpassword" id="rptpassword" placeholder="Confirm" class="form-control form-control-md">
                 </div>
                 <div class="d-flex justify-content-center">

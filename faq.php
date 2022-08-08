@@ -156,9 +156,9 @@
                             class="accordion-button collapsed border-0" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                             What is BesTube? </button> </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse border-0"
+                    <div id="flush-collapseOne" class="accordion-collapse collapse border-0 bg-danger"
                         aria-labelledby="flush-headingOne" data-bs-parent="#myAccordion">
-                        <div class="accordion-body p-0">
+                        <div class="accordion-body p-0 text-light">
                             <ul class="list-unstyled m-0">
                                 <p>BesTube is a subscription-based streaming service that allows our members to
                                     watch TV shows, Best of youtube videos and movies without commercials on an
@@ -173,9 +173,9 @@
                             class="accordion-button collapsed border-0" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                             How to sign up for BesTube </button> </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse border-0"
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse border-0 bg-danger"
                         aria-labelledby="flush-headingOne" data-bs-parent="#myAccordion">
-                        <div class="accordion-body p-0">
+                        <div class="accordion-body p-0 text-light">
                             <p>Join the millions of subscribers around the world who enjoy unlimited award-winning
                                 TV shows, movies, music videos, and more without a single advertisement.
                                 As a BesTube member, you are charged once a month on the date you signed up. There
@@ -190,9 +190,9 @@
                             class="accordion-button collapsed border-0" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseThree" aria-expanded="false"
                             aria-controls="flush-collapseThree"> How to keep your account secure </button> </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse border-0"
+                    <div id="flush-collapseThree" class="accordion-collapse collapse border-0 bg-danger"
                         aria-labelledby="flush-headingOne" data-bs-parent="#myAccordion">
-                        <div class="accordion-body p-0">
+                        <div class="accordion-body p-0 text-light">
                             <p>Use a password unique to BesTube. Do not use the same password on BesTube that you use for other websites or apps. <br>
                             Your password should be: <br> 
                             - Unique to BesTube and not used for other websites or apps <br>
@@ -210,9 +210,9 @@
                             data-bs-target="#flush-collapseFive" aria-expanded="false"
                             aria-controls="flush-collapseFive"> How to change your BesTube password
                         </button> </h2>
-                    <div id="flush-collapseFive" class="accordion-collapse collapse border-0"
+                    <div id="flush-collapseFive" class="accordion-collapse collapse border-0 bg-danger"
                         aria-labelledby="flush-headingOne" data-bs-parent="#myAccordion">
-                        <div class="accordion-body p-0">
+                        <div class="accordion-body p-0 text-light">
                             <p>If you can't sign in to BesTube, you can reset your password by email if you've added your phone number to your account. If you forget the email address you registered with, you may be able to provide more information online to recover your account. 
                             </p>
                         </div>
@@ -223,9 +223,9 @@
                             class="accordion-button collapsed border-0" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
                             What devices can I use to stream BesTube? </button> </h2>
-                    <div id="flush-collapseSix" class="accordion-collapse collapse border-0"
+                    <div id="flush-collapseSix" class="accordion-collapse collapse border-0 bg-danger"
                         aria-labelledby="flush-headingOne" data-bs-parent="#myAccordion">
-                        <div class="accordion-body p-0">
+                        <div class="accordion-body p-0 text-light">
                             <p>You can stream BesTube from any Internet-connected device that offers the BesTube app. BesTube-ready devices include streaming media players, smart TVs, game consoles, smartphones, tablets, PCs, and laptops.
                             </p>
                         </div>
