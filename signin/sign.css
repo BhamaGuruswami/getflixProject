@@ -1,0 +1,67 @@
+.btnpwd:link, .btnpwd:visited{
+    text-decoration: none;
+}
+.btnpwd:hover{
+    text-decoration:underline;
+}
+body{
+    background-image: url(../assets/background.png) !important;
+    /* background-color: #111827 !important; */
+    background-size: cover;
+    opacity: 0.9;
+}
+.card{
+    box-shadow: 5px 5px 8px #111827;
+}
+.topnav .logo{
+	/* background-color: #ddd; */
+    background-color: #d42d3d;
+	color: #fff;
+    border-radius: 3px;
+}
+.topnav{
+    background-color: transparent !important;
+    opacity: 0.9;
+}
+.topnav:hover{
+    opacity: 1;
+}
+.topnav a.split{
+    float: right;
+    background-color: #d42d3d;
+    /* background-color: transparent; */
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 2px;
+}
+  .topnav a.split:hover{
+    background-color: #c8252d;
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 2px;
+}
+.signup{
+    font-weight: 500;
+}
+.forgetnav{
+    margin-bottom: 5rem !important;
+}
+.forgetfooter{
+    margin-top: 5rem !important;
+}
+.footer {
+    max-width: 100%;
+	overflow: auto;
+	background-color: #0b101a;
+    opacity: 0.9;
+}
+.footer, .footer a {
+	color: #999;
+	font-size: 0.9rem;
+    text-decoration: none;
+}
+.footer a:hover{
+    text-decoration: underline;
+    color: #d42d3d;
+}

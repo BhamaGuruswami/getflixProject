@@ -1,0 +1,1 @@
+CREATE TABLE `userDB`.`comment` ( `cid` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(128) NOT NULL , `date` DATETIME NOT NULL , `message` TEXT NOT NULL , PRIMARY KEY (`cid`)) ENGINE = InnoDB;
