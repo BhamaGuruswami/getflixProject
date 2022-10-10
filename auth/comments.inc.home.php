@@ -22,29 +22,20 @@ function getComments($pdo){
         $result2 = $pdo->query($sql2);
         if($row2 = $result2->fetch()){
             echo "<div class='commentbox'>";
-            echo $row2['name'] . "<br>";
-            echo $row['date'] . "<br>";
+            echo "<i>" . $row['date'] . "</i>" . "<br>";
+            echo "<span class='messagename'>" . $row2['name'] . "</span>" . "<br>";
             echo nl2br ($row['message']);
             if(isset($_SESSION['id'])){
                 if($_SESSION['id'] == $row2['id']){
-
-            
 
             // delete comment
             echo "<form class='deleteform' method='POST' action='".deleteComments($pdo)."'>
                 <input type='hidden' name='cid' value='".$row['cid']."'>
                 <button type='submit' name='commentDelete'>Delete</button>";
-
-                // delete page not working
-                // echo '<a href="delete.php?cid='. $row['cid'] .'" title="Delete" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
-
              echo "</form>";
-             
                 }
             }
-
             echo "</div>";
-            
         }
     }
 }
@@ -80,9 +71,9 @@ function getLogin($pdo){
             // header("Location: home.php?loginfailed");
             echo '<script> location.replace("home.php"); </script>';
             exit();
+          }
         }
     }
-}
 }
 
 // logout

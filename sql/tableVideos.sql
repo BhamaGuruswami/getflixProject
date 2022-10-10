@@ -1,0 +1,1 @@
+CREATE TABLE videos (id VARCHAR(150) PRIMARY KEY, name VARCHAR(250), category VARCHAR(50));

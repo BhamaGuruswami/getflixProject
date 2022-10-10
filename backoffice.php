@@ -1,6 +1,9 @@
 <?php 
   //Connection to youtube Data Api:
   include ('apiConn.php');
+
+  //Connect to database
+  include ('insertVideos.php');
  
 
 //Function to insert videos'data on the table:
@@ -8,7 +11,7 @@
       
         if(!empty($list->items)){
   
-            for($x=0; $x<15; $x++){
+            for($x=0; $x<50; $x++){
                 
                   if(isset($list->items[$x]->snippet->resourceId->videoId)){
           
@@ -19,7 +22,7 @@
                 echo '<td>'.$category.'</td>';
 
                 ?>
-                <td class="btn btn-danger">Delete</td>
+                <!-- <td class="btn btn-danger">Delete</td> -->
                 </tr>
              <?php   
               }
@@ -50,7 +53,9 @@
     <!-- link bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- link css -->
-    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./signin/home.css?v=<?php echo time(); ?>">
+    <!-- font awesome icons -->
+    <script src="https://kit.fontawesome.com/6c36406174.js" crossorigin="anonymous"></script>
     <!-- link icon in head -->
     <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="../assets/ventilateur.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/ventilateur.png">
@@ -58,40 +63,18 @@
 <body>
 
 <!-- navbar -->
-<div class="topnav">
-  <a href="index.php"><img src="./assets/ventilateur.png" width="30" alt="logo"> <b>BesTube</b></a>
-  <a href="index.php">Home</a>
-  <a href="./shows/movies.php">Movies</a>
-  <a href="./shows/tvshows.php">TV Shows</a>
-  <div class="dropdown">
-  <button class="dropbtn  dropdown-toggle" role="button" id="dropdownMenuLink" aria-expanded="false">
-    Dropdown link
-</button>
-    <ul class="dropdown-content dropdown-menu">
-    <li><a class="dropdown-item" href="catalog.php?id=">Sport</a></li>
-    <li><a class="dropdown-item" href="#">Music</a></li>
-    <li><a class="dropdown-item" href="#">Cooking</a></li>
-    <li><a class="dropdown-item" href="#">Movies</a></li>
-    </ul>
+<div class="topnav container-fluid p-2">
+    <a class="logo"  href="index.php"><img src="./assets/ventilateur.png" width="30" alt="logo"> <b>BesTube</b></a>
+    <a href="./user_backoffice/index.php" class="split">Users</a>
+    <a href="./contact_backoffice/index.php" class="split">Messages</a>
   </div>
-  <div class="dropdown">
-    <button class="dropbtn">My account</button>
-    <div class="dropdown-content">
-      <!-- <a href="sign.php">Log in</a> -->
-      <a href="./logout.php">Log out</a>
-    </div>
-  </div>
-  <div class="search-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Search..." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-  </div>
-</div>
 
-<div class="container pt-5">
+<div class="container mb-5">
+        <form action="" method="POST" class="p-5">
+         <button type="submit" name="update" class="btn btn-outline-danger">Update Database</button>
+  </form>
         <div class="row justify-content-center">
-        <table class="table table-hover table-dark table-striped">
+        <table class="table table-hover table-light table-striped">
         <thead>
             <tr>
 
@@ -100,7 +83,7 @@
                 <th scope="col">Title</th>
                 <th scope="col">Video ID</th>
                 <th scope="col">Category</th>
-                <th scope="col">Delete</th>
+                <!-- <th scope="col">Delete</th> -->
             </tr>
         </thead>
         <tbody>
@@ -118,33 +101,22 @@
 
 
 
-
-<footer class="footer p-2">
-  <p>Any questions? Contact us 1-866-579-7172</p>
-  <div class="footer-cols">
-    <ul>
-      <li><a href="#">FAQ</a></li>
-      <li><a href="#">Ways To Watch</a></li>
-      <li><a href="#">Getflix Originals</a></li>
-    </ul>
-    <ul>
-      <li><a href="#">Help Center</a></li>
-      <li><a href="#">Terms Of Use</a></li>
-      <li><a href="#">Contact Us</a></li>
-    </ul>
-    <ul>
-      <li><a href="#">Account</a></li>
-      <li><a href="#">Privacy</a></li>
-      <li><a href="#">Speed Test</a></li>
-    </ul>
-    <ul>
-      <li><a href="#">Media Center</a></li>
-      <li><a href="#">Cookie Preferences</a></li>
-      <li><a href="#">Legal Notices</a></li>
-    </ul>
-  </div>
-</footer>
+        <footer class="footer p-2">
+            <div class="footer-cols">
+                <ul>
+                      <li><a href="./faq.php">FAQ</a></li>
+                </ul>
+                <ul>
+                    <li><a href="./contact.php">Contact Us</a></li>
+                </ul>
+                <ul>
+                    <li><a href="./auth/home.php">BesTube Originals</a></li>
+                </ul>
+                <ul>
+                <li>2022 BesTube <i class="fa-regular fa-copyright"></i></li>
+                </ul>
+            </div>
+        </footer>
 <!-- link script js -->
-<script src="myscript.js"></script>
 </body>
 </html>

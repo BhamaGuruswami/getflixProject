@@ -2,7 +2,6 @@
 <?php
 session_start();
 require "./contact_backoffice/code.php";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +22,6 @@ require "./contact_backoffice/code.php";
     <!-- link icon in head -->
     <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="../assets/ventilateur.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/ventilateur.png">
-
   </head>
 
 <body>
@@ -39,36 +37,38 @@ require "./contact_backoffice/code.php";
             <div class="text-center">
                 <h3 class="text-light mb-5">How Can We Help You?</h3>
             </div>
-            <div class=" d-flex align-items-center justify-content-center">
+              <div class=" d-flex align-items-center justify-content-center">
                 <div class="bg-white col-md-6 rounded-2">
-                    <div class="p-4 rounded shadow-md ">
+                  <div class="p-4 rounded shadow-md ">
                     <form action="./contact_backoffice/code.php" method="POST">
-                        <div>
-                            <label for="name" class="form-label">Enter your name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Name" required>
-                        </div>
-                        <div class="mt-3">
-                            <label for="email" class="form-label">Enter your email</label>
-                            <input type="text" name="email" class="form-control" placeholder="Email address" required>
-                        </div class="mt-3">
-                        <div class="mt-3">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-                        </div>
-                        <div class="mt-3 mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea name="message" cols="20" rows="6" class="form-control"
+                      <div>
+                        <label for="name" class="form-label">Enter your name</label>
+                        <input type="text" name="name" class="form-control" placeholder="Name" required>
+                      </div>
+                      <div class="mt-3">
+                        <label for="email" class="form-label">Enter your email</label>
+                        <input type="text" name="email" class="form-control" placeholder="Email address" required>
+                      </div class="mt-3">
+                      <div class="mt-3">
+                          <label for="subject" class="form-label">Subject</label>
+                          <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                      </div>
+                      <div class="mt-3 mb-3">
+                          <label for="message" class="form-label">Message</label>
+                          <textarea name="message" cols="20" rows="6" class="form-control"
                                 placeholder="Leave your message here"></textarea>
-                        </div>
-                        <button type="submit" name="save_message" class="btn btn-primary">Submit Form</button>
-                        </button>
-                    </div>
+                      </div>
+                          <button type="submit" name="save_message" class="btn btn-danger">
+                            Send
+                          </button>
+                   </div>
+                   </form>
+                 </div>
                 </div>
-            </div>
-        </div>
-        </div>
+              </div>
+</div>
 
-</form>
+
 
 <footer class="footer p-2">
   <div class="footer-cols ">
@@ -86,12 +86,7 @@ require "./contact_backoffice/code.php";
    </ul>
   </div>
 </footer>
-
-
-
-</div>
-<script src="myscripts.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 </body>
 </html>

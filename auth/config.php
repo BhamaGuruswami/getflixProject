@@ -1,9 +1,9 @@
 <?php
 // connection with PDO
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'root');
-define('DB_NAME', 'register');
+define('DB_SERVER', 'database-2.csmkfiung66c.us-east-1.rds.amazonaws.com');
+define('DB_USERNAME', 'admin');
+define('DB_PASSWORD', '4G^xPTq3');
+define('DB_NAME', 'userDB');
  
 /* Attempt to connect to MySQL database */
 try{
@@ -13,11 +13,3 @@ try{
 } catch(PDOException $e){
     die("ERROR: Could not connect. " . $e->getMessage());
 }
-
-// $conn = mysqli_connect("localhost", "root", "root", "comments");
-
-// // Check connection
-// if($conn === false){
-//     die("ERROR: Could not connect. "
-//         . mysqli_connect_error());
-//   }

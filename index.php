@@ -1,5 +1,6 @@
 <?php
-// Connection to users table
+include "adminConn.php";
+//Connection to users table
 require_once "config.php";
 if(!empty($_SESSION['id'])){
     $id = $_SESSION['id'];
@@ -8,6 +9,9 @@ if(!empty($_SESSION['id'])){
 } else{
     header("Location: ./signin/sign.php");
 }
+
+$background = 0;
+
 ?>
 
 <?php 
@@ -23,7 +27,7 @@ function insertImage($list, $x, $y){
   <a id="linkphp" href="./auth/index.php?id=<?php echo $list->items[$x]->snippet->resourceId->videoId; ?>">
     <div class="card">        
       <img width="85%" src="https://img.youtube.com/vi/<?php echo $list->items[$x]->snippet->resourceId->videoId; ?>/maxresdefault.jpg" class="card-img-top" alt="video">></img>
-      <div class="card-body" style="background-color:#eae9e7;">
+      <div class="card-body">
         <p class="card-text" id="titleVideo"><?php echo $list->items[$x]->snippet->title; ?></p>
       </div> 
     </div>
@@ -54,6 +58,7 @@ function insertImage($list, $x, $y){
   <script src="https://kit.fontawesome.com/6c36406174.js" crossorigin="anonymous"></script>
   <!-- link bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   <!-- link css -->
   <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
   <!-- link icon in head -->
@@ -63,11 +68,12 @@ function insertImage($list, $x, $y){
 <body>
 <!-- navbar -->
 <div class="topnav">
-  <a href="index.php"><img src="./assets/ventilateur.png" width="30" alt="logo"> <b>BesTube</b></a>
-  <a href="index.php">Home</a>
+  <a class="topnavlogo" href="index.php"><img src="./assets/ventilateur.png" width="30" alt="logo"> <b>BesTube</b></a>
+  <a class="topnavhome" href="index.php">Home</a>
   <div class="dropdown">
     <button class="dropbtn">Categories</button>
     <div class="dropdown-content">
+      <a href="#originals">Originals</a>
       <a href="#sport">Sport</a>
       <a href="#music">Music</a>
       <a href="#cooking">Cooking</a>
@@ -83,71 +89,134 @@ function insertImage($list, $x, $y){
   </div>
   <span class="welcome text-light text-center mx-3"><b>Welcome <?php echo $row['name']; ?></b></span>
   <div class="search-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Search..." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
+    <form action="" method="post">
+
+      <input type="text" name="search" placeholder="Search..." name="search">
+      <button name="submitSearch" type="submit"><i class="fa fa-search"></i></button>
+
     </form>
   </div>
 </div>
+
+<?php
+include_once('search.php');
+?>
+
 <!-- Main image -->
+<?php 
+if($background==0){
+  ?>
 <div class="container1">
 <img src="./assets/background.png" class="main img-fluid" alt="Responsive image">
-<div class="centered carousel-caption" style="top:56% !important; left:28% !important;padding-left: 7%;"><h4>Watch the best videos of Youtube selected only for you.</h4><p class="pmain">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem nostrum officia quisquam, eveniet tempora quidem minus soluta esse illum consectetur!</p></div>
+<div class="centered carousel-caption" style="top:56% !important; left:28% !important;padding-left: 7%;" ><h2>Watch our selection of the best videos on Youtube</h2></div>
 </div>
+<?php
+}
+?>
 
 <!-- CAROUSEL 1 LARGE SCREEN  -->
-<h4 class="title1 pt-4" id="sport"><a href="./shows/movies.php?id=<?php echo $youtubePL1; ?>">Sport</a></h4>
+<h3 class="title1 pt-4" id="originals"><a href="./shows/movies.php?id=<?php echo $youtubePL1; ?>">Originals</a></h3>
+<div id="large" class="wrapper">
+  <section id="sectionOriginals1">
+    <a href="#sectionOriginals3" class="arrow__btn">‹</a>
+<?php 
+ insertImage($videolistOriginals, $startSect=0, $endSect=5);
+?>
+<a href="#sectionOriginals2" class="arrow__btn">›</a>
+</section>
+<section id="sectionOriginals2">
+<a href="#sectionOriginals1" class="arrow__btn">‹</a>
+<?php 
+   insertImage($videolistOriginals, $startSect=5, $endSect=10);
+?>
+<a href="#sectionOriginals3" class="arrow__btn">›</a>
+</section>
+<section id="sectionOriginals3">
+<a href="#sectionOriginals2" class="arrow__btn">‹</a>
+<?php 
+  insertImage($videolistOriginals, $startSect=10, $endSect=15);
+?>
+<a href="#sectionOriginals1" class="arrow__btn">›</a>
+</section>
+</div>
+
+<!-- CAROUSEL 1 SMALL SCREEN  -->
+<div id="small" class="wrapper">
+<section id="sectionSmallOrignals1">
+<a href="#sectionSmallOriginals3" class="arrow__btn">‹</a>
+<?php 
+  insertImage($videolistOriginals, $startSect=0, $endSect=2);
+?>
+<a href="#sectionSmallOriginals2" class="arrow__btn">›</a>
+</section>
+<section id="sectionSmallOriginals2">
+<a href="#sectionSmallOriginals1" class="arrow__btn">‹</a>
+<?php
+    insertImage($videolistOriginals, $startSect=2, $endSect=4);
+?>
+<a href="#sectionSmallOriginals3" class="arrow__btn">›</a>
+</section>
+<section id="sectionSmallOriginals3">
+<a href="#sectionSmallOriginals2" class="arrow__btn">‹</a>
+<?php
+  insertImage($videolistOriginals, $startSect=4, $endSect=6);
+?>
+<a href="#sectionSmallOriginals1" class="arrow__btn">›</a>
+</section>
+</div>
+
+<!-- CAROUSEL 2 LARGE SCREEN  -->
+<h3 class="title1 pt-4" id="sport"><a href="./shows/movies.php?id=<?php echo $youtubePL2; ?>">Sport</a></h3>
 <div id="large" class="wrapper">
   <section id="section1">
     <a href="#section3" class="arrow__btn">‹</a>
 <?php 
- insertImage($videolist, $startSect=0, $endSect=5);
+ insertImage($videolistSport, $startSect=0, $endSect=5);
 ?>
 <a href="#section2" class="arrow__btn">›</a>
 </section>
 <section id="section2">
 <a href="#section1" class="arrow__btn">‹</a>
 <?php 
-   insertImage($videolist, $startSect=5, $endSect=10);
+   insertImage($videolistSport, $startSect=5, $endSect=10);
 ?>
 <a href="#section3" class="arrow__btn">›</a>
 </section>
 <section id="section3">
 <a href="#section2" class="arrow__btn">‹</a>
 <?php 
-  insertImage($videolist, $startSect=10, $endSect=15);
+  insertImage($videolistSport, $startSect=10, $endSect=15);
 ?>
 <a href="#section1" class="arrow__btn">›</a>
 </section>
 </div>
 
-<!-- CAROUSEL 1 SMALL SCREEN  -->
+<!-- CAROUSEL 2 SMALL SCREEN  -->
 <div id="small" class="wrapper">
 <section id="sectionSmall1">
 <a href="#sectionSmall3" class="arrow__btn">‹</a>
 <?php 
-  insertImage($videolist, $startSect=0, $endSect=2);
+  insertImage($videolistSport, $startSect=0, $endSect=2);
 ?>
 <a href="#sectionSmall2" class="arrow__btn">›</a>
 </section>
 <section id="sectionSmall2">
 <a href="#sectionSmall1" class="arrow__btn">‹</a>
 <?php
-    insertImage($videolist, $startSect=2, $endSect=4);
+    insertImage($videolistSport, $startSect=2, $endSect=4);
 ?>
 <a href="#sectionSmall3" class="arrow__btn">›</a>
 </section>
 <section id="sectionSmall3">
 <a href="#sectionSmall2" class="arrow__btn">‹</a>
 <?php
-  insertImage($videolist, $startSect=4, $endSect=6);
+  insertImage($videolistSport, $startSect=4, $endSect=6);
 ?>
 <a href="#sectionSmall1" class="arrow__btn">›</a>
 </section>
 </div>
-  
-<!-- CAROUSEL 2 LARGE SCREEN-->
-<h4 class="title1" id="music"><a href="./shows/movies.php?id=<?php echo $youtubePL2; ?>">Music</a></h4>
+<!-- CAROUSEL 3 LARGE SCREEN-->
+<h3 class="title1" id="music"><a href="./shows/movies.php?id=<?php echo $youtubePL3; ?>">Music</a></h3>
 <div id="large" class="wrapper">
   <section id="sectionMusic1">
   <a href="#sectionMusic3" class="arrow__btn">‹</a>
@@ -172,7 +241,7 @@ function insertImage($list, $x, $y){
 </section>
 </div>
 
-<!-- CAROUSEL 2 SMALL SCREEN  -->
+<!-- CAROUSEL 3 SMALL SCREEN  -->
 <div id="small" class="wrapper">
 <section id="sectionSmallMusic1">
 <a href="#sectionSmallMusic3" class="arrow__btn">‹</a>
@@ -197,8 +266,8 @@ function insertImage($list, $x, $y){
 </section>
 </div>
 
-<!-- CAROUSEL 3 LARGE SCREEN-->
-<h4 class="title1" id="cooking"><a href="./shows/movies.php?id=<?php echo $youtubePL3; ?>">Cooking</a></h4>
+<!-- CAROUSEL 4 LARGE SCREEN-->
+<h3 class="title1" id="cooking"><a href="./shows/movies.php?id=<?php echo $youtubePL4; ?>">Cooking</a></h3>
 <div id="large" class="wrapper">
   <section id="sectionCooking1">
     <a href="#sectionCooking3" class="arrow__btn">‹</a>
@@ -223,7 +292,7 @@ function insertImage($list, $x, $y){
 </section>
 </div>
 
-<!-- CAROUSEL 3 SMALL SCREEN  -->
+<!-- CAROUSEL 4 SMALL SCREEN  -->
 <div id="small" class="wrapper">
 <section id="sectionSmallCooking1">
 <a href="#sectionSmallCooking3" class="arrow__btn">‹</a>
@@ -248,8 +317,8 @@ function insertImage($list, $x, $y){
 </section>
 </div>
 
-<!-- CAROUSEL 4 LARGE SCREEN-->
-<h4 class="title1" id="movies"><a href="./shows/movies.php?id=<?php echo $youtubePL4; ?>">Movies</a></h4>
+<!-- CAROUSEL 5 LARGE SCREEN-->
+<h3 class="title1" id="movies"><a href="./shows/movies.php?id=<?php echo $youtubePL5; ?>">Movies</a></h3>
 <div id="large" class="wrapper">
   <section id="sectionTrailer1">
     <a href="#sectionTrailer3" class="arrow__btn">‹</a>
@@ -274,7 +343,7 @@ function insertImage($list, $x, $y){
 </section>
 </div>
 
-<!-- CAROUSEL 4 SMALL SCREEN  -->
+<!-- CAROUSEL 5 SMALL SCREEN  -->
 <div id="small" class="wrapper">
 <section id="sectionSmallTrailer1">
 <a href="#sectionSmallTrailer3" class="arrow__btn">‹</a>
@@ -299,8 +368,8 @@ function insertImage($list, $x, $y){
 </section>
 </div>
 
-<!-- CAROUSEL 5 LARGE SCREEN-->
-<h4 class="title1" id="games"><a href="./shows/movies.php?id=<?php echo $youtubePL5; ?>">Gaming</a></h4>
+<!-- CAROUSEL 6 LARGE SCREEN-->
+<h3 class="title1" id="games"><a href="./shows/movies.php?id=<?php echo $youtubePL6; ?>">Gaming</a></h3>
 <div id="large" class="wrapper">
   <section id="sectionGames1">
     <a href="#sectionGames3" class="arrow__btn">‹</a>
@@ -325,7 +394,7 @@ function insertImage($list, $x, $y){
 </section>
 </div>
 
-<!-- CAROUSEL 5 SMALL SCREEN  -->
+<!-- CAROUSEL 6 SMALL SCREEN  -->
 <div id="small" class="wrapper">
 <section id="sectionSmallGames1">
 <a href="#sectionSmallGames3" class="arrow__btn">‹</a>
@@ -363,11 +432,36 @@ function insertImage($list, $x, $y){
     <li><a href="./auth/home.php">BesTube Originals</a></li>
     </ul>
     <ul>
-    <li>2022 BesTube <i class="fa-regular fa-copyright"></i></li>
-   </ul>
+    <li>2022 BesTube <i class="fa-regular fa-copyright"></i>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="button" class="btn btn-dark ms-5" data-bs-toggle="modal" data-bs-target="#admin" id="puzzle"><i class="fa fa-puzzle-piece"></i></button></li>
+  </ul>
   </div>
+ <!-- Modal -->
+<div class="modal fade" id="admin" tabindex="-1" aria-labelledby="Admin Form" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark">
+      <div class="modal-body">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="myform bg-dark">
+            <h1 class="text-center">Login Admin</h1>
+            <form action="" method="POST">
+                  <div class="mb-3 mt-4">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="userAdmin" class="form-control" id="usernameAdmin" aria-describedby="username admin">
+                </div>
+                <div class="mb-3">
+                    <label for="password"  class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="passwordAdmin">
+                </div>
+                <button type="submit" name="login" class="btn btn-light mt-3">LOGIN</button>               
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </footer>
 <!-- link script js -->
-<script src="myscript.js"></script>
 </body>
 </html>

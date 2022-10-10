@@ -4,7 +4,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,7 +43,6 @@
 
                 <form action="forget.php" method="post">
                 <h2 class="text-uppercase text-center mb-5">Recover your password</h2>
-
                   <!-- Email input -->
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example1">Email address</label>
@@ -57,7 +55,6 @@
                 </form>
               </div>
 
-
             </div>
           </div>
         </div>
@@ -66,7 +63,6 @@
     </div>
 
   </section>
-
 
   <footer class="footer">
     <p>Questions? Call 1-866-579-7172</p>
@@ -93,7 +89,6 @@
 
   </footer>
 
-  <script src="myscripts.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>

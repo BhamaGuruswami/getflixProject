@@ -7,7 +7,7 @@
 body{
     background-image: url(../assets/background.png) !important;
     /* background-color: #111827 !important; */
-    background-size: auto;
+    background-size: cover;
     opacity: 0.9;
 }
 .card{

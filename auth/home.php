@@ -5,6 +5,7 @@ include_once('comments.inc.home.php');
 session_start();
 ?>
 <?php
+// link Youtube API
 $videoID= '9tbxDgcv74c' ;
 $API_key = 'AIzaSyADr5BLQb1yjMtHftZIhhUEj96FvESVLMM';
 
@@ -47,7 +48,6 @@ try{
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/ventilateur.png">
     <title>Default Player</title>
 </head>
-<!-- <body class="mb-4 mx-2"> -->
     <body>
     <!-- navbar -->
     <div class="topnav p-2">
@@ -57,7 +57,7 @@ try{
   <!-- video -->
   <h3 class="text-light text-center mb-2">Deep Sea Nuke</h3>
     <div class="video" id="player">
-        <iframe max-width="854" max-height="480" src="https://www.youtube.com/embed/9tbxDgcv74c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/9tbxDgcv74c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 <!-- description -->
 <div class="accordion accordion-flush mx-5 mb-4" id="accordionFlushExample">
@@ -74,13 +74,13 @@ try{
   </div>
 <!-- login logout -->
 <?php
-    echo "<form class='mt-4 mx-5 text-light' method='POST' action='".getLogin($pdo)."'>
+    echo "<form class='mt-4 text-light' method='POST' action='".getLogin($pdo)."'>
         <span class='mx-1'> Log in here</span><br>
         <label for='username'></label>
         <input type='text' name='name' required value='' placeholder='Name'>
         <label for='password'></label>
         <input type='password' name='password' required value='' placeholder='Password'><br>
-        <button type='submit' name='loginSubmit' class='mx-1'>Log in</button>
+        <button type='submit' name='loginSubmit' class='buttonlogin mx-1'>Log in</button>
     </form>";
     echo "<form method='POST' action='".userLogout()."'>
         <button type='submit' name='logoutSubmit' class='buttonlogout'>Log out</button>
@@ -101,10 +101,10 @@ try{
         <input type='hidden' name='name' value='".$_SESSION['id']."'>
         <textarea name='message' id='message' required value='' placeholder='Leave your message here'></textarea><br>
         <button type='submit' name='commentSubmit' class='buttoncomment'>Comment</button>
-        <br><span class='text-light' style='font-weight: 500; margin-left: 52px;'>Messages</span>
+        <br><span class='messagestext text-light'>Messages</span>
     </form>";
     } else{
-        echo "<br>" . "<span class='mx-5 text-light'><i>You need an account to comment!</i></span><br><span class='text-light' style='font-weight: 500; margin-left: 52px;'>Messages</span>";
+        echo "<br>" . "<span class='account text-light mx-5'><i>You need an account to comment!</i></span><br><span class='messagestext text-light'> </span>";
     }
 
     getComments($pdo);

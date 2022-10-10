@@ -2,7 +2,6 @@
 session_start();
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +21,6 @@ session_start();
     <!-- link icon in head -->
     <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="../assets/ventilateur.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/ventilateur.png">
-
 </head>
 
 <body>
@@ -88,9 +86,7 @@ session_start();
    </ul>
   </div>
 </footer>
-
 </div>
-<script src="myscripts.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 </body>

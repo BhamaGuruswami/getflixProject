@@ -2,13 +2,13 @@ body{
     font-family: 'Poppins', sans-serif !important;
 }
 textarea{
-    width: 360px;
+    width: 350px;
     height: 80px;
     background-color:#ffffff;
     border-radius: 3px;
     border: transparent;
     opacity: 0.8;
-    margin-left: 50px !important;
+    /* margin-left: 50px !important; */
     padding: 5px;
 }
 textarea:hover{
@@ -21,19 +21,31 @@ textarea:hover{
     /* color:#c6111a; */
     color: #d42d3d;
 }
+form{
+    margin-left:3rem !important;
+    margin-right: 3rem !important;
+}
 .commentbox{
     position: relative;
-    width: 600px;
+    width: 55%;
     margin-left: 54px;
     color:#ffffff;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: 2px solid #d42d3d;
+    border-radius: 2px;
+    background-color: #d42d3d;
+    padding: 1%;
+    opacity: 0.9;
 }
 input[type=text], input[type=password]{
     border-radius: 2px;
     border: transparent;
-    padding: 5px;
+    padding: 4px;
     opacity: 0.8;
     background-color: #ffffff;
     margin-bottom: 20px;
+    margin-left: -10px;
 }
 input[type=password]{
     margin-left: 4px;
@@ -45,7 +57,8 @@ button{
     width: 90px;
     height: 25px;
     padding: 2px;
-    background-color:#d42d3d;
+    background-color:#1a1b20;
+    opacity: 0.9;
     border: transparent;
     border-radius: 2px !important;
     color:#ffffff;
@@ -55,8 +68,8 @@ button{
 }
 .deleteform button{
     position: absolute;
-    top: 20px;
-    margin-left: 266px;
+    top: 55px;
+    margin-left: 50%;
     font-size: small;
 }
 .video{
@@ -67,16 +80,32 @@ button{
     flex-direction: column;
     flex-wrap: wrap;
 }
-.buttonlogout{
-    margin-left: 52px;
+.messagestext{
+    font-weight: 600;
+    text-decoration: underline;
+    padding: 3px;
+    font-size: large;
+}
+.messagename{
+    font-weight: 600;
+}
+.buttonlogout, .buttonlogin{
+    margin-top: 5px;
+    margin-left: 4px;
+    background-color: #1a1b20;
+}
+.buttonlogin:hover, .buttonlogout:hover{
+    background-color: #d42d3d;
 }
 .buttoncomment{
-    margin-left: 320px;
+    margin-left: 1px;
     margin-top: 2px;
+    margin-bottom: 50px;
     font-size: small;
+    background-color: #d42d3d;
 }
 .buttoncomment:hover, .deleteform button:hover{
-    background-color: #c41324;
+    opacity: 1;
 }
 /* .descriptioncard{
     opacity: 0.8;
@@ -89,6 +118,72 @@ button{
 .accordion-button:after{
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
 }
-.accordion-body{
-    font-size: small;
+iframe{
+    width:854px;
+    height:480px;
+}
+@media screen and (max-width:854px){
+    iframe{
+        max-width: 640px;
+        height: 360px;
+    }
+    h3{
+        font-size: small !important;
+    }
+    form{
+        margin-left: 1% !important;
+    }
+    .buttoncomment{
+        margin-left: 260px;
+    }
+    .accordion-body{
+        font-size: small;
+    }
+    .commentbox{
+        margin-left: 5px;
+    }
+    textarea{
+        width: 350px;
+    }
+    #accordionFlushExample{
+        margin-left: 2% !important;
+        margin-right: 2% !important;
+    }
+    /* .account{
+        margin-left: 1px !important;
+    } */
+    .messagestext{
+        display: none;
+    }
+}
+@media screen and (max-width:426px){
+    iframe{
+        width: 300px;
+        height: 200px;
+    }
+    .commentbox{
+        margin-left: 5px;
+        width: auto;
+    }
+    textarea{
+        width:360px;
+    }
+    .deleteform button{
+        margin-left:180px;
+    }
+}
+@media screen and (min-width:426px) and (max-width:640px){
+    iframe{
+        width:auto;
+        height: auto;
+    }
+    .commentbox{
+        width:365px;
+    }
+}
+@media screen and (min-width:640px) and (max-width:854px){
+    iframe{
+        width:640px;
+        height:360px;
+    }
 }

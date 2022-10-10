@@ -50,7 +50,6 @@ try{
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/ventilateur.png">
     <title><?php echo $videolist->items[0]->snippet->title; ?></title>
 </head>
-<!-- <body class="mb-4 mx-2"> -->
   <body>
   <!-- navbar -->
   <div class="topnav p-2">
@@ -62,7 +61,7 @@ try{
   <?php echo $videolist->items[0]->snippet->title; ?>
   </h3>
     <div class="video" id="player">
-        <iframe width="854" height="480" src="https://www.youtube.com/embed/<?php echo $item; ?>?autoplay=1" title="YouTube video" allowfullscreen frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        <iframe src="https://www.youtube.com/embed/<?php echo $item; ?>?autoplay=1" title="YouTube video" allowfullscreen frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
       </div>
 <!-- description -->
   <div class="accordion accordion-flush mx-5 mb-4" id="accordionFlushExample">
@@ -77,28 +76,8 @@ try{
     </div>
     </div>
   </div>
-
     <div class="containercomment">
 <!-- login logout -->
-<?php
-    // echo "<form class='mt-4 mx-5 text-light' method='POST' action='".getLogin($pdo)."'>
-    //     <span class='mx-1'> Log in here</span><br>
-    //     <label for='username'></label>
-    //     <input type='text' name='name' required value='' placeholder='Name'>
-    //     <label for='password'></label>
-    //     <input type='password' name='password' required value='' placeholder='Password'><br>
-    //     <button type='submit' name='loginSubmit' class='mx-1'>Log in</button>
-    // </form>";
-    // echo "<form method='POST' action='".userLogout()."'>
-    //     <button type='submit' name='logoutSubmit' class='buttonlogout my-3 bg-danger'>Log out</button>
-    // </form>";
-
-    // if(isset($_SESSION['id'])){
-    //     echo "<br><span class='mx-5'> </span>";
-    // } else{
-    //     echo " ";
-    // }
-?>
 <!-- comments section -->
 <?php
     if(isset($_SESSION['id'])){
@@ -108,10 +87,10 @@ try{
         <input type='hidden' name='name' value='".$_SESSION['id']."'>
         <textarea name='message' id='message' required value='' placeholder='Leave your message here'></textarea><br>
         <button type='submit' name='commentSubmit' class='buttoncomment'>Comment</button>
-        <br><span class='text-light' style='font-weight: 500; margin-left: 52px;'>Messages</span>
+        <br><span class='messagestext text-light'>Messages</span>
     </form>";
     } else{
-        echo "<br>" . "<span class='mx-5 text-light'><i>You need an account to comment!</i></span><br><span class='text-light' style='font-weight: 500; margin-left: 52px;'>Messages</span>";
+        echo "<br>" . "<span class='account text-light'><i>You need an account to comment!</i></span><br><span class='messagestext text-light'>Messages</span>";
     }
 
     getComments($pdo);
@@ -127,13 +106,12 @@ try{
       <li><a href="../contact.php">Contact Us</a></li>
     </ul>
     <ul>
-    <li><a href="home.php">BesTube Originals</a></li>
+      <li><a href="home.php">BesTube Originals</a></li>
     </ul>
     <ul>
-      <li><a href="#">Copyright 2022 BesTube</a></li>
+      <li>2022 BesTube <i class="fa-regular fa-copyright"></i></li>
    </ul>
   </div>
 </footer>
 </body>
 </html>
-

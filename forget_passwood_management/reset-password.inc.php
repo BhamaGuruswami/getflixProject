@@ -19,7 +19,7 @@ if (isset($_post["reset-password-submit"])){
      $currentDate = date ("U");
 
      require  "dbconfi.php";
-     $sql ="SELECT * FROM pwdReset WHERE pwdResetSelector=? AND pwdResetExpire >= ?";
+     $sql ="SELECT * FROM pwdreset WHERE pwdResetSelector=? AND pwdResetExpire >= ?";
      $stmt = mysqli_stmt_init($conn);
      if (!mysqli_stmt_prepare($stmt,$sql)){
          echo 'there was an error';
@@ -36,7 +36,7 @@ if (isset($_post["reset-password-submit"])){
      }
      else{
         $tokenBin = hex2bin($validator);
-        $tokenCheck = password_verify($tokenBin,$row["pwdReset"]);
+        $tokenCheck = password_verify($tokenBin,$row["pwdreset"]);
         if ($tokenCheck === false){
             echo 'you need to re-submit your reset request.';
             exit();
@@ -69,7 +69,7 @@ if (isset($_post["reset-password-submit"])){
                 mysqli_stmt_bind_param($stmt, "ss",$newPwdHash,$tokenEmail);
                 mysqli_stmt_execute($stmt);
 
-                $sql ="DELETE FROM pwdReset WHERE pwdResetEmail =?";
+                $sql ="DELETE FROM pwdreset WHERE pwdResetEmail =?";
             $stmt = mysqli_stmt_init($conn);
              if (!mysqli_stmt_prepare($stmt,$sql)){
         echo 'there was an error';

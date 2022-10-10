@@ -1,7 +1,6 @@
 <?php
 session_start();
 require 'dbcon.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +46,7 @@ require 'dbcon.php';
                     <div class="p-4 rounded shadow-md ">
                     <div class="text-center">
             <h4>Users Update 
-                    <a href="../index.php" class="btn btn-danger float-end">BACK</a>
+                    <a href="index.php" class="btn btn-danger float-end">BACK</a>
                 </h4>
             </div>
 
@@ -66,7 +65,7 @@ require 'dbcon.php';
                   <label for="password" style="font-weight: 600;">Choose a password </label>
                   <input type="password" name="password" id="password" value="<?= $message['password']; ?>" placeholder="Password" class="form-control form-control-md">
                 </div>
-                        <button type="submit" name="update_message" class="btn btn-primary">
+                        <button type="submit" name="update_message" class="btn btn-danger">
                                     Update Users
                                 </button>
                     </div>

@@ -106,7 +106,13 @@ body {
 }
 .footer li {
 	line-height: 1.9;
+  list-style-type: none;
 }
+.footer a:hover{
+  text-decoration: underline;
+  color: #d42d3d;
+}
+
 .footer .lang-select {
 	margin-top: 2rem;
 	color: #999;
@@ -333,6 +339,10 @@ body {
   margin: 0 40px;
   transform: scale(1.2);
 } 
+.card{
+  padding: 0 2px;
+  transition: 250ms all;
+}
 
 
 

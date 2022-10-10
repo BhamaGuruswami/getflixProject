@@ -33,6 +33,10 @@ body{
   opacity: 0.9;
   width: 100%;
 }
+h2{
+  margin-top: 5px;
+  white-space: nowrap;
+}
 ul{
   list-style-type:none;
 }
@@ -57,6 +61,7 @@ ul{
   margin-right: 16px;
   border: none;
   border-radius: 6px;
+  width: 300px;
 }
 .topnav .search-container button{
   float: right;
@@ -97,6 +102,7 @@ ul{
   /* padding: 12px 16px; */
   text-decoration: none;
   display: block;
+  font-weight: 600;
 }
 .dropdown-content a:hover{background-color: transparent; opacity: 1; color:#c8252d; font-weight: 600;}
 .dropdown:hover .dropdown-content{display: block;}
@@ -118,11 +124,11 @@ ul{
   grid-template-columns: repeat(5, auto);
   margin: 20px 0;
 }
-.wrapper section .item{
+.card{
   padding: 0 2px;
   transition: 250ms all;
 }
-.wrapper section .item:hover{
+.card:hover{
   margin: 0 40px;
   transform: scale(1.2);
 } 
@@ -138,11 +144,6 @@ ul{
   right: 0;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%);
 } 
-/* @media only screen and (max-width: 600px) {
-  a.arrow__btn {
-    display: none;
-  }
-} */
 .title1{
   margin-top: 15px;
   margin-left: 20px;
@@ -161,6 +162,7 @@ ul{
 }
 .footer a:hover{
   text-decoration: underline;
+  color: #d42d3d;
 }
 .footer p {
 	margin-bottom: 1.5rem;
@@ -170,7 +172,7 @@ ul{
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 2rem;
 }
-
+/* media screen max 350px */
 @media screen and (max-width: 350px){
 	.footer .footer-cols{
 	grid-template-columns: repeat(2, 1fr);
@@ -186,39 +188,6 @@ ul{
    width: 150px;
    height: 200px;
   }
-}
-@media screen and (min-width: 351px) and (max-width: 530px){
-	.footer .footer-cols{
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 1rem;
-	}
-	.text h1{
-		font-size: 2rem !important;
-	}
-	.text p{
-		font-size: 1rem !important;
-	}
-  .card {
-    width: 200px;
-    height: 250px;
-  }
-}
-
-.footer li {
-	line-height: 1.9;
-}
-.footer .lang-select {
-	margin-top: 2rem;
-	color: #999;
-	background-color: #0c1a35;
-	background-image: none;
-	border: 1px solid #333;
-	padding: 1rem 1.2rem;
-	border-radius: 5px;
-}
-
-/* media screen navbar and main image text */
-@media screen and (max-width: 350px){
   .dropdown{
     display: block;
   }
@@ -241,37 +210,61 @@ ul{
     margin-bottom: 3%;
   }
   .welcome{
-    font-size: 0.8em;
-    display: block;
-    padding-left: 125px;
-    padding-top: 5px;
-    padding-bottom: 10px;
+    display: none;
   }
   .pmain{
     display: none;
   }
-  h4{
+  h2{
     font-size: small;
+    white-space: break-spaces;
   }
 }
+@media screen and (min-width: 351px) and (max-width: 530px){
+	.footer .footer-cols{
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1rem;
+	}
+	.text h1{
+		font-size: 2rem !important;
+	}
+	.text p{
+		font-size: 1rem !important;
+	}
+  .card {
+    width: 200px;
+    height: 250px;
+  }
+}
+.footer li {
+	line-height: 1.9;
+}
+.footer .lang-select {
+	margin-top: 2rem;
+	color: #999;
+	background-color: #0c1a35;
+	background-image: none;
+	border: 1px solid #333;
+	padding: 1rem 1.2rem;
+	border-radius: 5px;
+}
 
+/* media screen navbar and main image text */
 @media screen and (min-width: 351px) and (max-width: 500px){
   .topnav .search-container {
     float: left;
     margin-left: 2%;
   }
   .topnav input[type=text], .topnav input[type=submit]{
-    /* display: inline-block;
+    display: inline-block;
     width: 75%;
     margin-bottom: 3%;
     padding: 10px;
-    text-align: left; */
-    display: none;
+    text-align: left;
   }
   .topnav .search-container button{
-    /* padding: 5px 1px;
-    margin-top: 10px; */
-    display: none;
+    padding: 5px 1px;
+    margin-top: 10px;
   }
   .topnav a{
     text-align: left;
@@ -285,29 +278,37 @@ ul{
   .pmain{
     display: none;
   }
-  h4{
-    font-size: medium;
+  h2{
+    font-size: larger;
+    white-space: break-spaces;
+    margin-top:10px;
   }
   .card {
     width: 180px;
-    height: 200px;
+    /* height: 200px; */
   }
 }
-
+@media screen and (max-width:500px){
+  .row{
+    display: block;
+    margin-left:5px;
+  }
+  .container{
+    padding: 8%;
+  }
+}
 @media screen and (max-width: 700px) {
   .topnav a, .topnav input[type=text], .topnav input[type=submit] {
     float: none;
-    /* display: block; */
-    /* text-align: left; */
-    /* width: 100%; */
-    /* margin: 0; */
-    /* padding: 14px; */
   }
 }
 @media screen and (min-width: 501px) and (max-width: 700px) {
   .topnav a{
     float:left;
     font-size: 0.9em;
+  }
+  .topnavhome{
+    margin-top: 2px;
   }
   .topnav input[type=text]{
     margin-top: 6px;
@@ -324,27 +325,29 @@ ul{
   .dropbtn{
     font-size: 0.9em;
   }
-  h4{
-    font-size: medium;
+  h2{
+    /* font-size: medium; */
+    margin-top:-15px;
+    white-space: break-spaces;
   }
   .pmain{
     font-size: small;
   }
 }
-
 @media screen and (min-width: 501px) and (max-width: 604px){
   .welcome{
     display: none;
   }
+  .topnav .search-container{
+    float: none;
+  }
 }
-
 @media screen and (min-width: 531px) and (max-width:603px) {
   .card {
     width: 200px;
     height: 250px;
   }
 }
-
 @media screen and (min-width: 604px) and (max-width: 750px){
   .topnav .search-container{
     float: none;
@@ -354,13 +357,15 @@ ul{
     width: 250px;
     height: 300px;
   }
+  h2{
+    margin-top:-10px;
+  }
 }
-
-@media screen and (min-width: 750px) and (max-width: 885px){
+@media screen and (min-width: 751px) and (max-width: 885px){
   .topnav .search-container{
     float: right;
     margin-bottom: 6px;
-    width: 30%;
+    /* width: 30%; */
     font-size: 0.8em;
   }
   .topnav .search-container button{
@@ -377,10 +382,14 @@ ul{
     padding-left: 7px;
   }
 }
-
-@media screen and (min-width: 700px) and (max-width:910px){
+@media screen and (max-width:750px){
+  .dropdown-content{
+    position: relative;
+  }
+}
+@media screen and (min-width: 700px) and (max-width:975px){
   .topnav input[type=text]{
-    width: 50%;
+    width: 70%;
   }
   .topnav .search-container button{
     /* padding: 5px 5px; */
@@ -391,13 +400,17 @@ ul{
     float:left;
     font-size: 0.9em;
   }
+  .topnavlogo{
+    margin-top: -1px;
+  }
   .dropbtn{
     font-size: 0.9em;
   }
-
+  h2{
+    margin-left: 40px;
+  }
 }
-
-@media only screen and (min-width: 700px){
+@media only screen and (min-width: 701px){
   #small {
     display: none;
   }
@@ -417,12 +430,13 @@ ul{
     color: black;
     font-size: 20px;
   }
-
   .card {
     width: 300px;
     height: 350px;
   }
-
+  h2{
+    margin-left:10%;
+  }
 }
 
 #linkphp {
@@ -434,6 +448,7 @@ ul{
   font-size: 0em;
   z-index: 0;
   padding: 0px;  
+  text-decoration: none;
  }
 
 @media only screen and (max-width: 700px){
@@ -471,16 +486,24 @@ ul{
   max-width: 100%;
   /* height: auto; */
 }
-
 .card-body {
-  background-color: rgb(230, 219, 219); 
+  background-color:#eae9e7;
 }
-
-h4 >a{
+h3 >a{
   color: white;
   text-decoration: none;
 }
-h4 >a:hover{
+h3 >a:hover{
   color:#c6111a;
 }
 
+@media only screen and (max-width:900px) {
+  #puzzle {
+    display: none;
+  }
+}
+@media screen and (min-width:1000px){
+  h2{
+    font-size: 40px;
+  }
+}
